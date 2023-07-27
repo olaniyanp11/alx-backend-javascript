@@ -11,6 +11,6 @@ export default async function handleProfileSignup() {
       `${results[1].body} ${results[0].firstName} ${results[0].lastName}`,
     );
   } catch (error) {
-    console.error('Signup system offline');
+    console.log('Signup system offline');
   }
 }
