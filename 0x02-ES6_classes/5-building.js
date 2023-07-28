@@ -1,15 +1,19 @@
+/* eslint-disable no-underscore-dangle */
 export default class Building {
   constructor(sqft) {
-    if (this.constructor !== Building && !this.evacuationWarningMessage) {
+    this._sqft = sqft;
+    if (
+      this.constructor !== Building
+      && this.evacuationWarningMessage === undefined
+    ) {
       throw new Error(
-        'Class extending Building must implement evacuationWarningMessage',
+        'Class extending Building must override evacuationWarningMessage',
       );
     }
-    this.__sqft = sqft;
   }
 
   get sqft() {
-    return this.__sqft;
+    return this._sqft;
   }
 
   set sqft(sqft) {
