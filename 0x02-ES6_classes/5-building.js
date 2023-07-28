@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 export default class Building {
   constructor(sqft) {
-    this._sqft = sqft;
+    this.__sqft = sqft;
     if (
       this.constructor !== Building
       && this.evacuationWarningMessage === undefined
@@ -13,10 +13,10 @@ export default class Building {
   }
 
   get sqft() {
-    return this._sqft;
+    return this.__sqft;
   }
 
   set sqft(sqft) {
-    this._sqft = sqft;
+    this.__sqft = sqft;
   }
 }
