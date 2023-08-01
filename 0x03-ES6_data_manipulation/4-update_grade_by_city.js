@@ -12,10 +12,11 @@ export default function updateStudentGradeByCity(
       if (students.id === newGrades[index].studentId) {
         if (newGrades[index].grade) {
           students.grade = newGrades[index].grade;
-        } else {
-          students.grade = 'N/A';
         }
       }
+    }
+    if (!students.grade) {
+      students.grade = 'N/A';
     }
     return students;
   });
