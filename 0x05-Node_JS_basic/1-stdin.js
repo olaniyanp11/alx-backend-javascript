@@ -17,5 +17,5 @@ child.on('line', (input) => {
 
 // closes the process with some text
 child.on('close', () => {
-  console.log('\nThis important software is now closing');
+  console.log('This important software is now closing');
 });
