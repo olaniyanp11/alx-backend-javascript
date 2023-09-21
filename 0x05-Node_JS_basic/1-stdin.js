@@ -1,21 +1,13 @@
-const readline = require('readline');
+process.stdout.write("Welcome to Holberton School, what is your name?\n");
 
-// Prompts a new message
-console.log('Welcome to Holberton School, what is your name?');
+process.stdin.on("readable", () => {
+  const name = process.stdin.read();
 
-// Creates a new child process
-const child = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
+  if (name !== null) {
+    process.stdout.write(`Your name is: ${name}`);
+  }
 });
 
-// collects data from one line on tne cmd
-child.on('line', (input) => {
-  console.log(`Your name is: ${input}`);
-  child.close();
-});
-
-// closes the process with some text
-child.on('close', () => {
-  console.log('This important software is now closing');
+process.stdin.on("end", () => {
+  process.stdout.write("This important software is now closing\n");
 });
